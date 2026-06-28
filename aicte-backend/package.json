@@ -1,0 +1,44 @@
+{
+  "name": "aicte-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon api/index.js",
+    "restart": "nodemon api/index.js",
+    "dev": "node api/index.js",
+    "seed": "node prisma/seed.js",
+    "placement:sample": "node scripts/generatePlacementSample.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@prisma/client": "^6.0.1",
+    "argon2": "^0.41.1",
+    "axios": "^1.7.7",
+    "body-parser": "^1.20.3",
+    "canvas": "^3.2.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "groq": "^3.64.1",
+    "groq-sdk": "^0.8.0",
+    "http-proxy-middleware": "^3.0.3",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.0.2",
+    "nanoid": "^5.0.8",
+    "nodemailer": "^7.0.10",
+    "pdf-table-extractor": "^1.0.1",
+    "pdfjs-dist": "^2.16.105",
+    "pg": "^8.13.1",
+    "uuid": "^11.0.3",
+    "ws": "^8.18.3",
+    "xlsx": "^0.18.5",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7",
+    "prisma": "^6.19.0"
+  }
+}

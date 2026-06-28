@@ -1,0 +1,27 @@
+{
+  "institute_data": {
+    "universityDetails": {
+      "universityName": "Test Engineering College",
+      "email": "testinstitute@example.edu",
+      "contactNumber": "9876543210",
+      "instituteType": "Engineering",
+      "state": "Maharashtra",
+      "district": "Mumbai",
+      "pincode": "400001"
+    },
+    "contactDetails": {
+      "title": "Dr.",
+      "firstName": "Admin",
+      "middleName": "Kumar",
+      "lastName": "Singh",
+      "phone": "9876543210",
+      "email": "admin@testinstitute.edu",
+      "designation": "Principal",
+      "address": "123 College Road, Andheri",
+      "district": "Mumbai",
+      "state": "Maharashtra",
+      "postalCode": "400001"
+    }
+  },
+  "password": "Test@123"
+}

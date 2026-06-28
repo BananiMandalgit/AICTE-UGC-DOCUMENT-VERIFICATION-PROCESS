@@ -1,0 +1,25 @@
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+dist/
+
+# Logs
+*.log
+
+# Runtime uploads
+aicte-backend/public/uploads/
+
+# macOS
+.DS_Store
+
+# Python virtual environment
+venv/
+.venv/

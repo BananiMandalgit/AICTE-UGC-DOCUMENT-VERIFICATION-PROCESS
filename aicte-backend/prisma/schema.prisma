@@ -1,0 +1,294 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model ContactDetails {
+  phone        String     @id
+  title        String
+  firstName    String
+  middleName   String?
+  lastName     String
+  designation  String
+  address      String
+  district     String
+  state        String
+  postalCode   String
+  email        String     @unique
+  altEmail     String?
+  universityId String     @unique
+  university   University @relation(fields: [universityId], references: [id])
+}
+
+model University {
+  id                    String                  @id @default(uuid(4))
+  email                 String                  @unique
+  phone                 String                  @unique
+  password              String                  @default("abcdefgh")
+  universityName        String
+  universityType        String
+  state                 String
+  district              String
+  geolocation           String?
+  pincode               Int
+  status                InstituteStatus         @default(UNVERIFIED)
+  contatctDetails       ContactDetails?
+  nirfRuns              NirfRun[]
+  placementData         PlacementData[]
+  UniversityApplication UniversityApplication[]
+}
+
+model Evaluator {
+  evaluator_id         String                      @id @default(uuid())
+  email                String                      @unique
+  phone                String                      @unique
+  password             String                      @default("abcdefgh")
+  state                String
+  district             String
+  pincode              String
+  role                 EvaluatorRole
+  specialization       String[]
+  assigned_document    EvaluatorDocumentRelation[]
+  assigned_application UniversityApplication[]
+}
+
+model UniversityApplication {
+  uni_application_id  String                @id @default(uuid())
+  application_id      String
+  application_name    String
+  application_desc    String
+  messages            Json?
+  createdOn           DateTime              @default(now())
+  universityId        String
+  status              DocumentStatus        @default(NOT_SUBMITTED)
+  evaluator_id        String?
+  submittedAt         DateTime?
+  updatedAt           DateTime              @updatedAt
+  application         ApplicationTypes      @relation(fields: [application_id], references: [application_id])
+  Evaluator           Evaluator?            @relation(fields: [evaluator_id], references: [evaluator_id])
+  university          University            @relation(fields: [universityId], references: [id])
+  UniversityDocuments UniversityDocuments[]
+}
+
+model UniversityDocuments {
+  uni_doc_id                 String                      @id @default(uuid())
+  uni_application_id         String
+  doc_id                     String
+  errors                     Json?
+  extractedTexts             Json?
+  uni_doc_uri                String?
+  timestamp                  DateTime                    @default(now())
+  messages                   Json?
+  status                     DocumentStatus              @default(NOT_SUBMITTED)
+  facultyAnalysisJson        Json?
+  legalAnalysisJson          Json?
+  publicationCredibilityJson Json?
+  researchEligibilityJson    Json?
+  assigned_evaluator         EvaluatorDocumentRelation[]
+  document                   Document                    @relation(fields: [doc_id], references: [doc_id])
+  application                UniversityApplication       @relation(fields: [uni_application_id], references: [uni_application_id], onDelete: Cascade)
+}
+
+model EvaluatorDocumentRelation {
+  id           String              @id @default(uuid())
+  evaluator_id String
+  uni_doc_id   String
+  status       DocumentStatus      @default(ASSIGNED)
+  check_type   EvaluatorRole
+  evaluator    Evaluator           @relation(fields: [evaluator_id], references: [evaluator_id])
+  document     UniversityDocuments @relation(fields: [uni_doc_id], references: [uni_doc_id])
+}
+
+model ApplicationTypes {
+  application_id          String                  @id @default(uuid())
+  application_name        String
+  application_description String
+  deadline                DateTime?
+  priority                Priority                @default(MEDIUM)
+  documents               ApplicationDocuments[]
+  UniversityApplication   UniversityApplication[]
+}
+
+model Document {
+  doc_id              String                 @id @default(uuid())
+  doc_name            String
+  format_uri          String?
+  deadline            DateTime               @default(now())
+  priority            Priority               @default(MEDIUM)
+  role                DocumentRole
+  category            String
+  application_type    ApplicationDocuments[]
+  UniversityDocuments UniversityDocuments[]
+}
+
+model Logs {
+  id                 String    @id @default(uuid())
+  timestamp          DateTime  @default(now())
+  uni_application_id String?
+  uni_document_id    String?
+  evaluator_id       String?
+  actionPerformed    String
+  doer               Doer
+  object             LogObject
+}
+
+model ApplicationDocuments {
+  application_id String
+  doc_id         String
+  applicationR   ApplicationTypes @relation(fields: [application_id], references: [application_id])
+  documentR      Document         @relation(fields: [doc_id], references: [doc_id])
+
+  @@unique([application_id, doc_id])
+}
+
+model PlacementData {
+  id                     String      @id @default(uuid())
+  collegeCode            String
+  collegeName            String
+  state                  String
+  university             String?
+  academicYear           Int
+  academicSession        String?
+  eligibleStudents       Int
+  studentsPlaced         Int
+  placementPercent       Float
+  avgSalaryLpa           Float
+  corePlacementPercent   Float
+  industryMoUs           Int
+  internshipsCount       Int
+  higherEducationPercent Float
+  complianceRemarks      String?
+  aiScore                Float?
+  riskLevel              String?
+  analysisJson           Json?
+  createdAt              DateTime    @default(now())
+  updatedAt              DateTime    @updatedAt
+  instituteId            String?
+  institute              University? @relation(fields: [instituteId], references: [id])
+
+  @@unique([collegeCode, academicYear])
+  @@index([state])
+  @@index([university])
+  @@index([instituteId])
+  @@map("PlacementData")
+}
+
+model NirfRun {
+  id               String               @id @default(uuid())
+  instituteId      String
+  academicYear     Int
+  status           NirfRunStatus        @default(QUEUED)
+  finalScore       Float?
+  jobId            String?
+  uploadKey        String?
+  originalFileName String?
+  notes            String?
+  createdAt        DateTime             @default(now())
+  updatedAt        DateTime             @updatedAt
+  components       NirfComponentScore[]
+  institute        University           @relation(fields: [instituteId], references: [id], onDelete: Cascade)
+
+  @@index([instituteId, academicYear])
+  @@map("NirfRun")
+}
+
+model NirfComponentScore {
+  id        String   @id @default(uuid())
+  runId     String
+  key       String
+  label     String
+  score     Float    @default(0)
+  weight    Float    @default(0)
+  createdAt DateTime @default(now())
+  run       NirfRun  @relation(fields: [runId], references: [id], onDelete: Cascade)
+
+  @@unique([runId, key])
+  @@map("NirfComponentScore")
+}
+
+model Feedback {
+  id           String       @id @default(uuid())
+  role         FeedbackRole
+  subject      String
+  message      String
+  contactName  String
+  contactEmail String
+  contactPhone String?
+  rating       Int?
+  createdAt    DateTime     @default(now())
+}
+
+enum EvaluatorRole {
+  FORGERY_CHECKER
+  LAYOUT_CHECKER
+  CONTENT_CHECKER
+  ADMIN
+}
+
+enum Doer {
+  EVALUATOR
+  UNIVERSITY
+}
+
+enum LogObject {
+  APPLICATION
+  DOCUMENT
+}
+
+enum Priority {
+  LOW
+  MEDIUM
+  HIGH
+  URGENT
+  P5
+}
+
+enum Actions {
+  APP_CREATED
+  DOC_SUBMITTED
+  DOC_RESUBMITTED
+  PRIORITY_CHANGED
+  DOC_VIEWED
+  APPROVED
+  REJECTED
+}
+
+enum DocumentStatus {
+  NOT_SUBMITTED
+  SUBMITTED
+  PROCESSING
+  VERIFIED
+  ASSIGNED
+  IN_REVIEW
+  APPROVED
+  REJECTED
+}
+
+enum InstituteStatus {
+  UNVERIFIED
+  PROCESSING
+  VERIFIED
+  APPROVED
+  REJECTED
+}
+
+enum NirfRunStatus {
+  QUEUED
+  PROCESSING
+  COMPLETED
+  FAILED
+}
+
+enum FeedbackRole {
+  INSTITUTE
+  EVALUATOR
+}
+
+enum DocumentRole {
+  AICTE
+  UGC
+}

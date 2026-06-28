@@ -1,0 +1,209 @@
+[
+  {
+    "id": "new_institute",
+    "name": "New Institutions",
+    "documents": [
+      {
+        "id": "new_institute_0",
+        "name": "Affidavit 1: Application verification and compliance",
+        "pdfPath": "http://localhost:3100/documents/affidavit1.pdf"
+      },
+      {
+        "id": "new_institute_1",
+        "name": "Affidavit 2: Sworn statement of data accuracy",
+        "pdfPath": "http://localhost:3100/documents/affidavit2.pdf"
+      },
+      {
+        "id": "new_institute_2",
+        "name": "Land Ownership documents",
+        "pdfPath": "https://www.aicte-india.org/sites/default/files/ANNEXURE%2014%20State%20Wise%20Competent.pdf"
+      },
+      {
+        "id": "new_institute_3",
+        "name": "ANNEXURE-14: Lease agreement (if applicable)",
+        "pdfPath": "http://localhost:3100/documents/ANNEXURE14.pdf"
+      },
+      {
+        "id": "new_institute_4",
+        "name": " ANNEXURE-3: Land Use Certificate",
+        "pdfPath": "http://localhost:3100/documents/ANNEXURE3.pdf"
+      },
+      {
+        "id": "new_institute_5",
+        "name": "CERTIFICATE-2: Building Plan",
+        "pdfPath": "http://localhost:3100/documents/CERTIFICATE2.pdf"
+      },
+      {
+        "id": "new_institute_6",
+        "name": "CERTIFICATE-3: Financial Proof",
+        "pdfPath": "http://localhost:3100/documents/CERTIFICATE3.pdf"
+      },
+      {
+        "id": "new_institute_7",
+        "name": "CERTIFICATE-3: Digital Signature Certificate (DSC)",
+        "pdfPath": "http://localhost:3100/documents/CERTIFICATE3_0.pdf"
+      },
+      {
+        "id": "new_institute_8",
+        "name": "ANNEXURE-17: Society/Trust/Company Registration Certificate",
+        "pdfPath": "http://localhost:3100/documents/ANNEXURE17.pdf"
+      },
+      {
+        "id": "new_institute_9",
+        "name": "ANNEXURE-9: Detailed Project Report (DPR)",
+        "pdfPath": "http://localhost:3100/documents/ANNEXURE9.pdf"
+      },
+      {
+        "id": "new_institute_10",
+        "name": "AFFIDAVIT-5: Compliance Documents",
+        "pdfPath": "http://localhost:3100/documents/AFFIDAVIT5.pdf"
+      },
+      {
+        "id": "new_institute_11",
+        "name": "FORMAT-1: State NOC",
+        "pdfPath": "http://localhost:3100/documents/FORMAT-1.pdf"
+      }
+    ]
+  },
+  {
+    "id": "eoa",
+    "name": "Extension of Approval (EoA)",
+    "documents": [
+      {
+        "id": "eoa_0",
+        "name": "FORMAT-1: Self-Disclosure Format",
+        "pdfPath": "http://localhost:3100/documents/FORMAT-1.pdf"
+      },
+      {
+        "id": "eoa_1",
+        "name": "ANNEXURE-5: Accreditation Proof",
+        "pdfPath": "http://localhost:3100/documents/ANNEXURE-5.pdf"
+      },
+      {
+        "id": "eoa_2",
+        "name": "ANNEXURE-10: Admission Reports",
+        "pdfPath": "http://localhost:3100/documents/ANNEXURE-10.pdf"
+      },
+      {
+        "id": "eoa_3",
+        "name": "ANNEXURE-5: Financial Statements",
+        "pdfPath": "http://localhost:3100/documents/ANNEXURE-5.pdf"
+      },
+      {
+        "id": "eoa_4",
+        "name": " ANNEXURE-3: Land Use Certificate",
+        "pdfPath": "http://localhost:3100/documents/ANNEXURE-3.pdf"
+      },
+      {
+        "id": "eoa_5",
+        "name": "FORMAT-2: State/University Affiliation Letter",
+        "pdfPath": "http://localhost:3100/documents/FORMAT-2.pdf"
+      },
+      {
+        "id": "eoa_6",
+        "name": "FORMAT-3: Fee Payment Proof",
+        "pdfPath": "http://localhost:3100/documents/FORMAT-3.pdf"
+      }
+    ]
+  },
+  {
+    "id": "collaboration",
+    "name": "Collaboration & Twinning Programs",
+    "documents": [
+      {
+        "id": "collaboration_0",
+        "name": "FORMAT-1: Memorandum of Understanding (MoU)",
+        "pdfPath": "http://localhost:3100/documents/FORMAT-1 (1).pdf"
+      },
+      {
+        "id": "collaboration_1",
+        "name": "ANNEXURE-5: Approval Letters",
+        "pdfPath": "http://localhost:3100/documents/ANNEXURE-5 Mou.pdf"
+      },
+      {
+        "id": "collaboration_2",
+        "name": "ANNEXURE-10: Course Curricula",
+        "pdfPath": "http://localhost:3100/documents/ANNEXURE-10(MOU).pdf"
+      },
+      {
+        "id": "collaboration_3",
+        "name": "Governance and Management Structure",
+        "pdfPath": "https://www.aicte-india.org/sites/default/files/ANNEXURE-3%20Norms%20for%20Land%20and%20Built%20up%20Area%20Requirements%20of%20the.pdf"
+      }
+    ]
+  },
+  {
+    "id": "odl_ol",
+    "name": "Open and Distance Learning (ODL)/Online Learning (OL)",
+    "documents": [
+      {
+        "id": "odl_ol_0",
+        "name": "FORMAT-2: LMS Infrastructure Proof",
+        "pdfPath": "http://localhost:3100/documents/FORMAT-2 (1).pdf"
+      },
+      {
+        "id": "odl_ol_1",
+        "name": "ANNEXURE-5: Academic Records",
+        "pdfPath": "http://localhost:3100/documents/ANNEXURE-5 norms for faculty requirements.pdf"
+      },
+      {
+        "id": "odl_ol_2",
+        "name": "ANNEXURE-10: Content Accreditation",
+        "pdfPath": "http://localhost:3100/documents/ANNEXURE-10 ol.pdf"
+      },
+      {
+        "id": "odl_ol_3",
+        "name": "FORMAT-3: Student Support Details",
+        "pdfPath": "http://localhost:3100/documents/FORMAT-3 (1).pdf"
+      }
+    ]
+  },
+  {
+    "id": "penal_actions",
+    "name": "Penal Actions (For Norm Violations)",
+    "documents": [
+      {
+        "id": "penal_actions_0",
+        "name": "FORMAT-1: Compliance Report",
+        "pdfPath": "http://localhost:3100/documents/FORMAT-1 (2).pdf"
+      },
+      {
+        "id": "penal_actions_1",
+        "name": "ANNEXURE-3: Supporting Evidence",
+        "pdfPath": "http://localhost:3100/documents/ANNEXURE-3.pdf"
+      },
+      {
+        "id": "penal_actions_2",
+        "name": "ANNEXURE-5: Affidavit",
+        "pdfPath": "http://localhost:3100/documents/ANNEXURE-5 norms for faculty requirements (1).pdf"
+      }
+    ]
+  },
+  {
+    "id": "hibernation",
+    "name": "Hibernation or Closure of Institutions",
+    "documents": [
+      {
+        "id": "hibernation_0",
+        "name": "FORMAT-2: Affidavit",
+        "pdfPath": "http://localhost:3100/documents/FORMAT-2 (2).pdf"
+      },
+      {
+        "id": "hibernation_1",
+        "name": "ANNEXURE-5: Notification to Stakeholders",
+        "pdfPath": "http://localhost:3100/documents/ANNEXURE-5 norms for faculty requirements (2).pdf"
+      },
+      {
+        "id": "hibernation_2",
+        "name": "ANNEXURE-10: Student Transition Plan",
+        "pdfPath": "http://localhost:3100/documents/ANNEXURE-10 undertaking to be submitted by the applicant institute.pdf"
+      },
+      {
+        "id": "hibernation_3",
+        "name": "FORMAT-3: Financial Settlement Proof",
+        "pdfPath": "http://localhost:3100/documents/FORMAT-3 (2).pdf"
+      }
+    ]
+  }
+  
+]
