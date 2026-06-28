@@ -61,11 +61,3 @@ setuptools==75.6.0
 six==1.16.0
 colorama==0.4.6
 
-# Note: Removed heavy dependencies:
-# - torch (2.5.1) - ~2GB
-# - torchvision (0.20.1) - ~500MB
-# - transformers (4.46.3) - ~500MB
-# - ultralytics (8.3.40) - YOLO models
-# - All NVIDIA CUDA dependencies
-# - Jupyter/IPython dependencies (not needed for production)
-# - Matplotlib/Seaborn (visualization, not needed for API)
