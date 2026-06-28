@@ -239,15 +239,6 @@ This platform demonstrates how modern full-stack engineering can simplify a comp
 - 🎥 Publish live demo and screenshots
 - 📱 Strengthen mobile-first UI flows
 
-## 🤝 Contributing
-
-1. Fork the repository.
-2. Create a feature branch.
-3. Make your changes.
-4. Test locally.
-5. Open a pull request.
-
-
 
 ## 📬 Contact
 
